@@ -1,0 +1,8 @@
+{
+  "development": {
+    "PORT": 3000,
+    "SSL_PORT": 44301,
+    "MONGODB_URI": "mongodb://localhost:27017/Bookus",
+    "secret_token": "itsParangatModularNodeAppSecretKey"
+  }
+}
