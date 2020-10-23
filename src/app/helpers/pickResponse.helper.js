@@ -503,7 +503,8 @@ exports.pickClientData = data => {
     "soap",
     "giftcard",
     "tipCards",
-    "facebookData"
+    "facebookData",
+    "customerId"
   ]);
   return response;
 };
