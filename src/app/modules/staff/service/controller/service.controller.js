@@ -1,11 +1,11 @@
 const {
     create,
-    finAllLocations
-} = require('../../location/business/location.business');
+    findAllService
+} = require('../business/service.business');
 const { errorHandler } = require('../../../../helpers/errorHandling.helper');
 
-// create a new location
-exports.location_create = async (req, res) => {
+
+exports.create_Service = async (req, res) => {
     try {
         const result = await create(req);
         res.status(200).send(result);
@@ -14,9 +14,9 @@ exports.location_create = async (req, res) => {
     };
 }
 
-exports.location_findAll = async (req, res) => {
+exports.service_findAll = async (req, res) => {
     try {
-        const result = await finAllLocations(req);
+        const result = await findAllService(req);
         res.status(200).send(result);
     } catch (e) {
         res.status(400).send(errorHandler(e));

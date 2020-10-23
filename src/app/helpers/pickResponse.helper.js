@@ -1082,7 +1082,7 @@ exports.pickTherapistProfile = data => {
   ]);
   return response;
 };
-
+//My Modifications
 exports.newLocation = data => {
   var response = _.pick(data, [
     "name",
@@ -1091,3 +1091,72 @@ exports.newLocation = data => {
   ]);
   return response;
 }
+
+exports.pickLocationListResponse = data => {
+  var response;
+  let listArr = [
+    "name",
+    "country",
+    "city"
+  ];
+  Array.isArray(data) ? response = _.map(data, _.partialRight(_.pick, listArr)) : response = _.pick(data, listArr)
+  return response;
+}
+
+
+exports.newUser = data => {
+  var response = _.pick(data, [
+    "firstName",
+    "lastName",
+    "gender",
+    "service"
+  ]);
+  return response;
+}
+
+exports.pickUser = data => {
+  var response;
+  let listArr = [
+    "firstName",
+    "lastName",
+    "gender",
+    "service"
+  ];
+  Array.isArray(data) ? response = _.map(data, _.partialRight(_.pick, listArr)) : response = _.pick(data, listArr)
+  return response;
+}
+
+exports.newService = data => {
+  var response = _.pick(data, [
+    "name",
+    "serviceType",
+    "staff",
+    "serviceFor",
+    "staffCommission",
+    "commissionEnabled",
+    "onlineBooking",
+    "room",
+    "loyaltyPoint"
+  ]);
+
+  return response;
+}
+
+exports.pickAllService = data => {
+  var response;
+  let listArr = [
+    "name",
+    "serviceType",
+    "staff",
+    "serviceFor",
+    "staffCommission",
+    "commissionEnabled",
+    "onlineBooking",
+    "room",
+    "loyaltyPoint"
+  ];
+  Array.isArray(data) ? response = _.map(data, _.partialRight(_.pick, listArr)) : response = _.pick(data, listArr)
+  return response;
+}
+
+//End of My Modifications

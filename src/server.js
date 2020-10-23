@@ -6,15 +6,18 @@ const express = require("express"),
     path = require('path'),
     http = require('http'),
     https = require('https'),
+    cors = require('cors'),
     app = express(),
-    salesRoute = require('./app/modules/staff/sales/routes/sales.routes'),
-    locationRoute = require('./app/modules/staff/location/routes/location.routes')
+    locationRoute = require('./app/modules/staff/location/routes/location.routes'),
+    userRoute = require('./app/modules/staff/user/routes/user.routes'),
+    serviceRoute = require('./app/modules/staff/service/routes/service.routes');
 
 
-
-app.use('/api/sales', salesRoute);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use('/api/location', locationRoute);
-
+app.use('/api/user', userRoute);
+app.use('/api/service', serviceRoute);
 
 app.listen(process.env.PORT, () => {
     console.log('Server Running')

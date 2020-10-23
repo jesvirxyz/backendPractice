@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 
 const locationSchema = new mongoose.Schema({
-    name: String,
-    country: String,
-    city: String
+    name: {
+        type: String
+    },
+    country: {
+        type: String
+    },
+    city: {
+        type: String
+    },
 }, {
     timestamps: true,
     versionKey: false
@@ -12,6 +18,7 @@ const locationSchema = new mongoose.Schema({
 locationSchema.pre('save', function (next) {
     next();
 });
+
 
 
 
